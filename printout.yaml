@@ -1,0 +1,18 @@
+---
+- name: Nuage event callback
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:
+    manageiq_validate_certs: False
+  pre_tasks:
+  - debug: msg="Running printout"
+  roles:
+  - role: xlab_si.nuage_miq_automate
+    validate_certs: False
+  tasks:
+  - debug: msg="I am a playbook running as event callback and I am able to access nuage credentials"
+  - debug: var=nuage_auth
+  - debug: msg="As well as details of the event that triggered me"
+  - debug: var=event
+  - debug: msg="So I'm now ready to do some work!"
