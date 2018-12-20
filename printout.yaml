@@ -17,4 +17,4 @@
   - debug: var=event
   - debug: msg="So I'm now ready to do some work!"
 
-  - debug: msg="I confirm that username is {nuage_auth.api_username} and event is raised for {event.entity.ID}"
+  - debug: msg="I confirm that username is {{ nuage_auth.api_username }} and event is raised for {{ event.entity.ID }}"
